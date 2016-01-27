@@ -1,6 +1,19 @@
 var request = require('supertest');
+var expect = require('expect.js');
 
 describe('RentalsController', function() {
+
+  describe('GET /booking', function() {
+    it('should locate booking page', function (done) {
+      request(sails.hooks.http.app)
+        .get('/booking')
+        .expect(200)
+        .end(function (err, res) {
+          expect(res.text).to.contain('Enter Item Details for Rent');
+          return done();
+        });
+    });
+  });
 
   describe('POST /rentals', function() {
 

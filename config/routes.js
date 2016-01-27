@@ -45,6 +45,6 @@ module.exports.routes = {
   * for configuration options and examples.                                  *
   *                                                                          *
   ***************************************************************************/
-
+  'get /booking': { view: 'booking' },
   'post /rentals': 'RentalsController.processRequest'
 };

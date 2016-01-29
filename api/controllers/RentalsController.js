@@ -7,9 +7,10 @@
 
 function hasValidParams(params) {
 	return ['name', 'item', 'type', 'pricePerHour'].every(function(prop) {
-		return (prop in params);
+		return params[prop];
 	});
 }
+
 module.exports = {
 	processRequest: function (req, res) {
 		if(hasValidParams(req.body))
